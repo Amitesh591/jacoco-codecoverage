@@ -9,6 +9,7 @@ import org.junit.Test;
  */
 public class AppTest {
 
+	//pali
 	String input1 = "noon";
 	App app = new App();
 	boolean expected = true;
@@ -27,5 +28,24 @@ public class AppTest {
 	public void isNotPlaindromeExceptionTest() {
 		assertEquals(false, app.isPalindrome(null));
 	}
+	//palirot
+	String input2="aab";
+	
+	@Test
+	public void isRotationOfPalindrome() {
+		assertEquals(expected, app.isRotationOfPalindrome(input2));
+	}
+
+	@Test
+	public void isNotRotationOfPalindrome() {
+		assertEquals(false, app.isRotationOfPalindrome("abcde"));
+	}
+
+	@Test(expected = IllegalArgumentException.class)
+	public void isRotationOfPalindromeExceptionTest() {
+		assertEquals(false, app.isRotationOfPalindrome(null));
+	}
+
+	
 
 }

@@ -8,6 +8,8 @@ import java.lang.*;
 import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.Deque;
+import java.util.regex.*;
+
 public class App {
 
 	public boolean isPalindrome(String input) {
@@ -162,6 +164,46 @@ public class App {
 	        // Check Empty Stack 
 	        return (stack.isEmpty()); 
 	    } 
+	 
+	 //age problem
+	 public static boolean isFit(int age,String cond,int exp) {
+		 if(age<=0)
+			 return false;
+		 if(age>=150)
+			 return false;
+		 else if(age>0 || age<150)
+		 {
+			 if(cond.equals("Sick"))
+				 return false;
+			 else if(cond.equals("Fine"))
+				 return true;
+			 else if(cond.equals("Average")) {
+				 if(exp>0)
+					 return true;
+				 else
+					 return false;
+			 }
+		 }
+		return false;
+		 
+	 }
+	 public static boolean isAlphaNumeric(String str)
+	    {
+	        
+	        String regex = "^(?=.*[a-zA-Z])(?=.*[0-9])[A-Za-z0-9]+$";
+	 
+	        Pattern pt = Pattern.compile(regex);
+	        if (str == null) {
+	            return false;
+	        }
+	 
+	       
+	        Matcher ma = pt.matcher(str);
+	 
+	        
+	        return ma.matches();
+	    }
+	 
 	
 
 }

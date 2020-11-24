@@ -86,7 +86,7 @@ public class AppTest {
 	  
 	  @Test  
 	    public void isParanthesis(){  
-	        System.out.println("test case isRotated");  
+	        System.out.println("test case isParenthesis");  
 	        assertEquals(true,App.isParanthesis("([{}])"));
 	        assertEquals(false,App.isParanthesis(")[{}])"));
 	        assertEquals(false,App.isParanthesis("{[{}])"));
@@ -97,11 +97,36 @@ public class AppTest {
 	        assertEquals(false,App.isParanthesis("[}"));
 	        assertEquals(false,App.isParanthesis("(]"));
 	        
-	      
-	      
+	       }
+	  
+	  @Test  
+	    public void isFit(){  
+	        System.out.println("test case isFit");  
+	        assertEquals(false,App.isFit(0,"Sick",1));
+	        assertEquals(false,App.isFit(160,"Sick",1));
+	        assertEquals(false,App.isFit(40,"Sick",1));
+	        assertEquals(true,App.isFit(40,"Fine",1));
+	        assertEquals(true,App.isFit(40,"Average",1));
+	        assertEquals(false,App.isFit(40,"Average",0));
+	        assertEquals(false,App.isFit(40,"AverageA",0));
 	       
+	        
+	       }
+	  
+	  @Test  
+	    public void isAlphaNumeric(){  
+	        System.out.println("test case isRotated");  
+	        assertEquals(true,App.isAlphaNumeric("amitesh123"));
+	        assertEquals(false,App.isAlphaNumeric("amiteshsujindar"));
+	        assertEquals(false,App.isAlphaNumeric(null));
+	        assertEquals(false,App.isAlphaNumeric("amitesh123@"));
+	        assertEquals(false,App.isAlphaNumeric("123"));
+	        assertEquals(false,App.isAlphaNumeric("@#"));
+	        
+	        
 	       
-	    }
+	        
+	       }
 
 	
 

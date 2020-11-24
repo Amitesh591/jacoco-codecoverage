@@ -15,7 +15,6 @@ public class AppTest {
 	String input1 = "noon";
 	App app = new App();
 	boolean expected = true;
-
 	@Test
 	public void isPlaindromeTest() {
 		assertEquals(expected, app.isPalindrome(input1));
@@ -123,8 +122,29 @@ public class AppTest {
 	        assertEquals(false,App.isAlphaNumeric("123"));
 	        assertEquals(false,App.isAlphaNumeric("@#"));
 	        
+	       }
+	  
+	  @Test  
+	    public void isSeason(){  
+	        System.out.println("test case isRotated");  
+	        assertEquals("Winter",App.isSeason(1));
+	        assertEquals("Winter",App.isSeason(2));
+	        assertEquals("Winter",App.isSeason(12));
+	        assertEquals("Spring",App.isSeason(3));
+	        assertEquals("Spring",App.isSeason(4));
+	        assertEquals("Spring",App.isSeason(5));
+	        assertEquals("Spring",App.isSeason(3));
+	        assertEquals("Summer",App.isSeason(6));
+	        assertEquals("Summer",App.isSeason(7));
+	        assertEquals("Summer",App.isSeason(8));
+	        assertEquals("Autumn",App.isSeason(9));
+	        assertEquals("Autumn",App.isSeason(10));
+	        assertEquals("Autumn",App.isSeason(11));
+	        assertEquals("Invalid",App.isSeason(13));
+	        assertEquals("Invalid",App.isSeason(0));
 	        
-	       
+	        
+	        
 	        
 	       }
 

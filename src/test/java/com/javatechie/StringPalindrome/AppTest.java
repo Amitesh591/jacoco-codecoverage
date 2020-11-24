@@ -4,6 +4,9 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import java.util.Arrays;
+import java.util.List;
+
 import org.junit.Test;
 
 /**
@@ -147,6 +150,95 @@ public class AppTest {
 	        
 	        
 	       }
+		@Test
+	public void containSum() {
+		int n = 5;
+		int s=12;
+		int []m = {1,2,3,7,5};
+		assertEquals(true, app.subarraySum(n,s,m));
+	}
+	
+	@Test
+	public void notContainSum() {
+		int n = 5;
+		int s=11;
+		int []m = {1,2,3,7,5};
+		assertEquals(false, app.subarraySum(n,s,m));
+	}
+	
+	@Test
+	public void maxPathSum1() {
+		int []a = {2,3,7,10,12};
+		int []b = {1,5,7,8};
+		int ans = 35;
+		assertEquals(ans, app.maxPathSum(a,b));
+	}
+	@Test
+	public void maxPathSum2() {
+		int []a = {1,2,3};
+		int []b = {3,4,5};
+		int ans = 15;
+		assertEquals(ans, app.maxPathSum(a,b));
+	}
+	@Test
+	public void missingNumber1()
+	{
+		int n = 5,ans=6;
+		int []arr = {1,2,3,4,5};
+		assertEquals(ans, app.missingNumber(arr,n));
+	}
+	
+	@Test
+	public void missingNumber2()
+	{
+		int n = 5,ans=2;
+		int []arr = {0,-10,1,3,-20};
+		assertEquals(ans, app.missingNumber(arr,n));
+	}
+	
+	@Test
+	public void getSum1()
+	{
+		int n = 3,ans = 1332;
+		int []arr = {1,2,3};
+		assertEquals(ans, app.getSum(arr,n));
+	}
+	@Test
+	public void getSum2()
+	{
+		int n = 2,ans = 33;
+		int []arr = {1,2};
+		assertEquals(ans, app.getSum(arr,n));
+	}
+	
+	@Test
+	public void LCS1()
+	{
+		String str1 = "abaaa",str2="baabaca";
+		List<String> ans = Arrays.asList("aaaa","abaa","baaa");
+		assertEquals(ans, app.LCS(str1,str2));
+	}
+	@Test
+	public void LCS2()
+	{
+		String str1 = "abcbdab",str2="bdcaba";
+		List<String> ans = Arrays.asList("bcab","bcba","bdab");
+		assertEquals(ans, app.LCS(str1,str2));
+	}
+	@Test
+	public void LCS3()
+	{
+		String str1 = "abcbdab",str2="pqxprst";
+		List<String> ans = Arrays.asList();
+		assertEquals(ans, app.LCS(str1,str2));
+	}
+	@Test
+	public void LCS4()
+	{
+		String str1 = "AGTGATG",str2="GTTAG";
+		List<String> ans = Arrays.asList("GTAG","GTTG");
+		assertEquals(ans, app.LCS(str1,str2));
+	}
 
 	
 

@@ -4,6 +4,10 @@ package com.javatechie.StringPalindrome;
  * Hello world!
  *
  */
+import java.lang.*;
+import java.util.ArrayDeque;
+import java.util.Arrays;
+import java.util.Deque;
 public class App {
 
 	public boolean isPalindrome(String input) {
@@ -50,5 +54,114 @@ public class App {
 		}
 		return rev;
 	}
+	//cube
+	public static int cube(int n){ 
+		if(n==0)
+			{return 0;}
+		else
+			{return n*n*n;}  
+    }
+	//anagram
+	 public static boolean anagram(String s1,String s2)
+	    {
+	        int h1[]=new int[26];
+		    int h2[]=new int[26];
+		    Arrays.fill(h1,0);
+		    Arrays.fill(h2,0);
+		    int i;
+		    if(s1.length()!=s2.length())
+		    {
+		        return false;
+		    }
+		    for(i=0;i<s1.length();i++)
+		    {
+		        h1[s1.charAt(i)-'a']++;
+		    }
+		    for(i=0;i<s2.length();i++)
+		    {
+		        h2[s2.charAt(i)-'a']++;
+		    }
+		    for(i=0;i<26;i++)
+		    {
+		        if(h1[i]!=h2[i])
+		        {
+		            return false;
+		        }
+		    }
+		    return true;
+	    }
+	 
+	 public static boolean isRotated(String s1, String s2){
+	        int n = s1.length();
+	        if(s1.length() != s2.length())
+	        {
+	        	return false;
+	        }
+	        else if( n==1 ) // have to explicitly handle case when size of string is one .
+	        {
+	        	return s1.equals(s2);
+	        }
+	        else{
+	        	s1 = s1 + s1 ;
+	        	if(s1.indexOf(s2) == 2) //for anticlockwise rotation of 2
+	        	{
+	        		return true;
+	        	}
+	        	else if(n>1 && s1.indexOf(s2) == n-2) // for clockwise rotation of 2
+	        	{
+	        		return true ;
+	        	}
+	        }
+	        return false;
+	}
+	 
+	 public static boolean isParanthesis(String expr) 
+	    { 
+	        // Using ArrayDeque is faster than using Stack class 
+	        Deque<Character> stack = new ArrayDeque<Character>(); 
+	  
+	        // Traversing the Expression 
+	        for (int i = 0; i < expr.length(); i++)  
+	        { 
+	            char x = expr.charAt(i); 
+	  
+	            if (x == '(' || x == '[' || x == '{')  
+	            { 
+	                // Push the element in the stack 
+	                stack.push(x); 
+	                continue; 
+	            } 
+	  
+	            // IF current current character is not opening 
+	            // bracket, then it must be closing. So stack 
+	            // cannot be empty at this point. 
+	            if (stack.isEmpty()) 
+	                return false; 
+	            char check; 
+	            switch (x) { 
+	            case ')': 
+	                check = stack.pop(); 
+	                if (check == '{' || check == '[') 
+	                    return false; 
+	                break; 
+	  
+	            case '}': 
+	                check = stack.pop(); 
+	                if (check == '(' || check == '[') 
+	                    return false; 
+	                break; 
+	  
+	            case ']': 
+	                check = stack.pop(); 
+	                if (check == '(' || check == '{') 
+	                    return false; 
+	                break; 
+	            } 
+	        } 
+	  
+	        // Check Empty Stack 
+	        return (stack.isEmpty()); 
+	    } 
+	
 
 }

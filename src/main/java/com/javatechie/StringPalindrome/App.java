@@ -40,18 +40,20 @@ public class App {
         if (isPalindrome(input)) 
             return true; 
   
-        // Now try all rotations one by one 
+        // Check all rotations sequencially 
         int n = input.length(); 
         for (int i = 0; i < n - 1; i++) { 
             String str1 = input.substring(i + 1); 
             String str2 = input.substring(0, i + 1); 
   
-            // Check if this rotation is palindrome 
+            // if current rotation is palindrome 
             if (isPalindrome(str1 + str2)) 
                 return true; 
         } 
         return false; 
     } 
+    
+    // if the string is reversed
 
 	private String reverse(String input) {
 		String rev = "";
@@ -191,6 +193,7 @@ public class App {
 		return false;
 		 
 	 }
+	 //alphanumeric
 	 public static boolean isAlphaNumeric(String str)
 	    {
 	        
@@ -207,6 +210,7 @@ public class App {
 	        
 	        return ma.matches();
 	    }
+	 //Season as per month
 	 public static String isSeason(int n) {
 		 
 		 switch (n)  
@@ -237,7 +241,7 @@ public class App {
 		
 		 
 	 }
-
+// Subarray sum
 	 public boolean subarraySum(int n, int s, int[] m) {
         int first = 0;
         int last = 0;
@@ -270,7 +274,7 @@ public class App {
             return true;
         }
     }
-	
+	//MaxPathSum
 	int maxPathSum(int A[], int B[])
     {
         int l1 = A.length;
@@ -306,7 +310,7 @@ public class App {
         res += Math.max(sum1, sum2);
         return res;
     }
-	
+	//Missing Number
 	public int missingNumber(int arr[], int size)
     {
         int shift = segregate (arr, size);
@@ -318,6 +322,7 @@ public class App {
         }
         return findMissingPositive(arr2,j);
     }
+	//find Missing Positive
     private int findMissingPositive(int arr[],int size){
         int i;
         for(i=0;i<size;i++){
@@ -330,6 +335,7 @@ public class App {
           return i+1;
       return size+1;
     }
+    // Do segregation
     private int segregate (int arr[], int size)
     {
         int j = 0, i;
